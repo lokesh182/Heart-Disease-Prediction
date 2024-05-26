@@ -81,12 +81,11 @@ The final model is selected based on its performance metrics such as accuracy, p
 
 ## Results 📈
 
-The model achieves the following performance metrics:
+The model achieves the following accuracy:
 
-- Accuracy: 85%
-- Precision: 87%
-- Recall: 83%
-- F1 Score: 85%
+Random Forest:98%
+
+
 
 
 ## Contributing 🤝
