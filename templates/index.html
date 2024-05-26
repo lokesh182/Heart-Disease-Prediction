@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+}
+
+.content-container {
+    flex: 1;
+    position: relative;
+}
+
+.background-image {
+    position: absolute;
+    top: 10rem; /* Adjust the top margin to create space for the quote */
+    left: 0;
+    width: 80%;
+    height: auto;
+    z-index: -1;
+    margin: 20px 85px; /* Add margin on top and bottom */
+}
+
+.quote {
+    font-family: 'Pacifico', cursive;
+    position: absolute;
+    top: 60px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    padding: 20px; /* Add padding for better readability */
+    border-radius: 10px; /* Add rounded corners for a polished look */
+    z-index: 1; /* Ensure the quote appears above the image */
+    max-width: 80%; /* Limit the width of the quote to avoid stretching */
+}
+
+.form-container {
+    flex: 1;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px; /* Add margin on both sides */
+}
+
+.pos{
+    position:absolute;
+    top: 50%;
+}
+
+.description ,.instructions, .disclaimers{
+    border-bottom: 1px solid #ccc;
+    text-align: justify;
+    margin-top: 30px; /* Add margin above the description */
+    margin-left: 20px;
+    padding:10px 20px;
+    background-color: #f9f9f9; /* Light gray background */
+    border-radius: 10px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #555;
+}
+
+input,
+select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.prediction-text {
+    margin-top: 30px;
+    text-align: center;
+    color: #555;
+}
+        </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content-container">
+            <img src="https://img.freepik.com/premium-vector/doctor-holding-heart-hand-red-heartbeat-with-life-line-cardiology-concept-health-protection-symbol-healthcare-vector-illustration-flat-minimal-design-isolated-white-background_153097-1973.jpg?w=2000" alt="Heart Disease" class="background-image">
+            <div class="quote">
+                <p>Know your heart, shape your destiny. Let's predict your heart's journey...</p>
+            </div>
+            <div class="pos">
+            <div class="description">
+                <h3>Short Description</h3>
+                <p>Our Heart Disease Prediction model offers personalized insights into cardiovascular health, helping users make informed decisions.</p>
+            </div>
+        
+            <div class="instructions">
+                <h3>Instructions</h3>
+                <p>Enter accurate medical data, click "Predict Diseases," and review results. Consult a healthcare professional for guidance.</p>
+            </div>
+        
+            <div class="disclaimers">
+                <h3>Disclaimers</h3>
+                <p>Predictions are for informational use only. Consult a healthcare provider for medical advice.</p>
+            </div>
+        </div>
+        </div>
+        <div class="form-container">
+            <form action="{{ url_for('predict')}}" method="post">
+                <h2>Heart Disease Prediction</h2>
+        
+                <label for="age">Age</label>
+                <input id="age" name="age" required="required">
+    
+                <label for="sex">Sex</label>
+                <select name="sex" id="sex" required="required">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                </select>
+    
+                <label for="cp">cp</label>
+            <select name="cp" id="cp" required="required">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+
+            <label for="tbps">trestbps</label>
+            <input id="tbps" name="tbps" required="required">
+
+            <label for="chol">chol</label>
+            <input id="chol" name="chol" required="required">
+
+            <label for="fbs">Fbs</label>
+            <select name="fbs" id="fbs" required="required">
+                <option value="0">0</option>
+                <option value="1">1</option>
+            </select>
+
+            <label for="ecg">restecg</label>
+            <select name="ecg" id="ecg" required="required">
+                <option value="0">0</option>
+                <option value="1">1</option>
+            </select>
+
+            <label for="thalach">Thalach</label>
+            <input id="thalach" name="thalach" required="required">
+
+            <label for="exang">exang</label>
+            <select name="exang" id="exang" required="required">
+                <option value="0">0</option>
+                <option value="1">1</option>
+            </select>
+
+            <label for="oldpeak">old peak</label>
+            <input id="oldpeak" name="oldpeak" required="required">
+
+            <label for="slope">slope</label>
+            <select name="slope" id="slope" required="required">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+
+            <label for="ca">CA</label>
+            <select name="ca" id="ca" required="required">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+
+            <label for="Thal">Thal</label>
+            <select name="Thal" id="Thal" required="required">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+
+                <!-- Add other input fields here -->
+    
+                <button id="sub" type="submit">Predict Diseases</button>
+            </form>
+            <div class="prediction-text">{{ prediction_text }}</div>
+        </div>
+    </div>
+
+</body>
+</html>
