@@ -88,7 +88,6 @@ The model achieves the following performance metrics:
 - Recall: 83%
 - F1 Score: 85%
 
-Detailed results and analysis can be found in the `results` directory.
 
 ## Contributing 🤝
 
