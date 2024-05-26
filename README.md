@@ -1,4 +1,4 @@
-# Heart Disease Prediction
+# Heart Disease Prediction❤️🩺
 
 ![Heart Disease Prediction](https://img.shields.io/badge/HeartDisease-Prediction-brightgreen)
 
@@ -22,7 +22,7 @@ The Heart Disease Prediction project leverages machine learning algorithms to pr
 
 Cardiovascular diseases are a leading cause of death globally. Early detection of heart disease can significantly improve the treatment outcome. This project uses machine learning techniques to predict the likelihood of heart disease based on various medical attributes.
 
-## Dataset
+## Dataset 📊
 
 The dataset used for this project is the [Cleveland Heart Disease dataset](https://archive.ics.uci.edu/ml/datasets/Heart+Disease) available from the UCI Machine Learning Repository. It includes the following attributes:
 
@@ -40,7 +40,7 @@ The dataset used for this project is the [Cleveland Heart Disease dataset](https
 - Number of major vessels (0-3) colored by fluoroscopy
 - Thalassemia (3 = normal; 6 = fixed defect; 7 = reversible defect)
 
-## Installation
+## Installation 🛠️
 
 1. Clone the repository:
 
@@ -62,12 +62,12 @@ The dataset used for this project is the [Cleveland Heart Disease dataset](https
     pip install -r requirements.txt
     ```
 
-## Usage
+## Usage 🚀
 
 1. Ensure that you have the dataset in the `data` folder. If not, download it from [here](https://archive.ics.uci.edu/ml/datasets/Heart+Disease).
 2. Run the heartdisease.ipynb to train model and perform EDA:
 
-## Model
+## Model 🤖
 
 The project explores various machine learning algorithms including:
 
@@ -79,7 +79,7 @@ The project explores various machine learning algorithms including:
 
 The final model is selected based on its performance metrics such as accuracy, precision, recall, and F1 score.
 
-## Results
+## Results 📈
 
 The model achieves the following performance metrics:
 
@@ -90,7 +90,7 @@ The model achieves the following performance metrics:
 
 Detailed results and analysis can be found in the `results` directory.
 
-## Contributing
+## Contributing 🤝
 
 Contributions are welcome! Please follow these steps to contribute:
 
@@ -100,11 +100,11 @@ Contributions are welcome! Please follow these steps to contribute:
 4. Push to the branch (`git push origin feature-branch`)
 5. Create a new Pull Request
 
-## License
+## License 📄
 
 This project is licensed under the Apache License - see the [LICENSE](LICENSE) file for details.
 
-## Contact
+## Contact 📧
 
 For any questions or feedback, please contact:
 
