@@ -85,7 +85,7 @@ The model achieves the following accuracy:
 
 Random Forest:98%
 
-![heart](image.png)
+![heart](Heart.png)
 
 
 
